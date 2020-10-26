@@ -1,5 +1,5 @@
 const backgroundImg = new Image (); 
-backgroundImg.src = '../img/background-canvas.jpeg';
+backgroundImg.src = '../img/bg-icebergs-1.png';
 
 class Background {
     constructor (canvas, canvasContext) {
@@ -12,6 +12,7 @@ class Background {
     
     draw() {
         //Mudar este check em função ao movimento da personagem. this.player.x
+        // Se o boneco mexe para a esquerda o background tem que mexer direita
         if(this.x > 800) {
             this.x = -1;
         } 
