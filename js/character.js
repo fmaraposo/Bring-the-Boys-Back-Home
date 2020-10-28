@@ -2,11 +2,10 @@ class Character {
     constructor () {
         this.x = 50;
         this.y = 250;
-        this.width = 100;
-        this.height = 150;
-        this.img = '../img/monkey-player.gif';
-        this.jumping = true;
-        this.vy = 2;
+        this.width = 90;
+        this.height = 80;
+        this.img = '../img/submarine.png';
+        this.vy = 20;
     }
 
     drawCharacter() {
@@ -28,17 +27,26 @@ class Character {
                 this.x -= 10;
             }
             break;
+            case 38: // Move up
+            if(this.y > 0) {
+                this.y -= 10; 
+            }
+            break;
+            case 40: // Move down
+            if(this.y< 360) {
+                this.y +=10;
+            }
+            break;
         }
-        // JUMP ->
     }
 
-    hitBottom() {
-        let rockBottom = 250;
-        if (this.y > rockBottom) {
-           this.y = rockBottom;
-            this.vy = 0;
-        }  
-    }
+    // hitBottom() {
+    //     let rockBottom = 250;
+    //     if (this.y > rockBottom) {
+    //        this.y = rockBottom;
+    //         this.vy = 0;
+    //     }  
+    // }
 }  
 
 
