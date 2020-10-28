@@ -17,17 +17,10 @@ class Background {
     }
     
     draw() {
-        //Mudar este check em função ao movimento da personagem. this.player.x
-        // Se o boneco mexe para a esquerda o background tem que mexer direita
-     /*   if(this.x > 800) {
-            this.x = -1;
-        } 
-        this.canvasContext.drawImage(this.img, -this.x ,0, this.img.width, this.img.height);
-        this.canvasContext.drawImage(this.img, this.img.width -this.x,0, this.img.width, this.img.height);
-        this.x = this.x + 1;*/
         this.canvasContext.drawImage(this.img, this.x, 0);
         this.canvasContext.drawImage(this.img, this.x + canvas.width, 0);
-    }   
+    }
+
     resizeImage() {
         this.img.width = this.canvas.width;
         this.img.height = this.canvas.height;

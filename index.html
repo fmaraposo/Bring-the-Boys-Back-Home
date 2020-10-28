@@ -8,41 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="wrapper">
+    <div class="wrapper">
 
-    <!-- Game Intro -->
+        <!-- Game Intro -->
 
-    <section id="game-intro">
-        <h1>Game Title</h1>
-    </section>
+        <section id="game-intro">
+            <h1>Game Title</h1>
+            <button id="start-button" class="btn">Start Game</button>
+        </section>
 
-    <!--  Canvas -->
-    <section id="game-board">
-        <canvas id="canvas" width="800" height="500"></canvas>
-    </section>
-   
-    <!-- Buttons - Bottom Part from The canvas -->
-    <!-- <section class="rightside">
-        <div class="inline">
-          <h2>Score</h2>
-          <p id="score">0</p>
-        </div>
-        <div class="inline">
-          <h2>Timer</h2>
-          <p id="timer">0</p>
-        </div> -->
+        <!--  Canvas -->
 
-    <!-- Buttons -->
-    <section id="game-buttons">
-        <button id="start-button" class="btn">Start Game</button>
-        <button id="instructions-button" class="btn">Instructions</button>
-        <button id="pause" class="btn">Pause Game</button>
-        <button id="audio-button" class="btn">Music Volume</button>
- </section>
+        <section id="game-board">
+            <canvas id="canvas" width="800" height="500"></canvas>
+        </section>
 
-</div>
+        <!-- Game Over -->
+
+        <section id="game-over"> </section>
+    
+        <!-- Buttons -->
+
+        <section id="game-buttons">
+            <button id="audio" class="btn">Music Game</button>
+            <button id="pause" class="btn">Pause Game</button>
+            <button id="restart" class="btn">Restart</button>
+        </section>
+
+    </div>
     <!-- JavaScript Scripts -->
     <script src="js/obstacles.js"></script>
+    <script src="js/bonus.js"></script>
     <script src="./js/background.js"></script>
     <script src="./js/character.js"></script>
     <script src="./js/game.js"></script>

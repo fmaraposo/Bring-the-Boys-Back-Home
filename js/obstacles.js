@@ -12,5 +12,4 @@ class Obstacle {
         obstImg.src = this.img;
         ctx.drawImage(obstImg, this.x, this.y, this.width, this.height);
     }
-
  }
