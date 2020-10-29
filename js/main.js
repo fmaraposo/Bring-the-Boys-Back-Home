@@ -4,8 +4,10 @@ let animationFrameId;
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 document.getElementById('game-board').style.display = 'none';
+document.getElementById('game-buttons').style.display = 'none';
 document.getElementById('game-over').style.display = 'none';
 document.getElementById('you-win').style.display = 'none';
+document.getElementById('kms').style.display ='none';
 
 //Music Game
 let musicGame = new Audio();
@@ -31,18 +33,16 @@ document.getElementById('pause').onclick = () => {
         musicGame.play();
     }
 };
-
+ 
 //Audio Button
 document.getElementById('audio').onclick = () => {
-    if(currentGame.musicGame === true) {
-        currentGame.musicGame = false;
-        currentGame.checkAudioButtons();
+    if(currentGame.gameMusic) {
+        currentGame.gameMusic = false;
         musicGame.pause();
         console.log('pause-music');
     } else {
-        currentGame.musicGame = true;
+        currentGame.gameMusic = true;
         musicGame.play();
-        currentGame.checkAudioButtons();
         console.log('play-music');
     }
 };
@@ -59,7 +59,7 @@ document.getElementById('restart').onclick = () => {
     startGame();
 };
 
-//Music Button 
+
 
 document.onkeydown = (e) => {
     let whereToGo = e.keyCode;
@@ -71,8 +71,10 @@ document.onkeyup = (e) => {
     currentGame.character.speedY = 0;
 };
 
-let canvasBackground = new Background (canvas, ctx);
+let canvasBackground = new Background (canvas, ctx); 
 let  currentGame = new Game ();  //Instantiate a new game
+
+let kmCounter = document.getElementById('kms').innerHTML = `Home: ${currentGame.kms}`;
 
 function startGame () {
     currentGame.gameIsRunning = true;
@@ -80,6 +82,8 @@ function startGame () {
     document.getElementById('game-intro').style.display = 'none';
     document.getElementById('game-over').style.display = 'none';
     document.getElementById('game-board').style.display = 'block';
+    document.getElementById('game-buttons').style.display = 'inline';
+    document.getElementById('kms').style.display = 'block';
     //Instantiate a new monkey
     currentCharacter = new Character ();
     currentGame.character = currentCharacter;
@@ -91,8 +95,9 @@ function startGame () {
 function updateCanvas() {
     ctx.clearRect(0,0, canvas.width, canvas.height);
     currentGame.kms--;
+    let kmCounter = document.getElementById('kms').innerHTML = currentGame.kms;
     currentGame.checkButtons();
-    currentGame.checkAudioButtons();
+    /* currentGame.checkAudioButtons(); */
     canvasBackground.move();
     canvasBackground.draw();
     currentGame.character.drawCharacter();
@@ -102,8 +107,6 @@ function updateCanvas() {
     currentGame.paintScore();
     currentGame.paintObstacles();
     currentGame.paintBonus();
-    currentGame.youWin();
-    currentGame.youLost();
     currentGame.obstacles.forEach((obstacle, index) => {
         currentGame.detectCollision(obstacle, index);
     });
@@ -111,6 +114,8 @@ function updateCanvas() {
         currentGame.detectCollisionBonus(bonus, index);
     });
     animationFrameId = requestAnimationFrame(updateCanvas);
+    currentGame.youWin();
+    currentGame.youLost();
 }
 
 

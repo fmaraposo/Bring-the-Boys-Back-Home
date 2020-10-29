@@ -48,10 +48,10 @@ class Character {
             }
             break;
             case 40: // Move down
-            if(this.y< 360) {
+            if(this.y< 400) {
                 this.speedY +=1;
             } else {
-                this.y = 360;
+                this.y = 400;
                 this.speedY = 0;
             }
             break;

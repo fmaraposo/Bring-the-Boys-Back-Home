@@ -1,6 +1,5 @@
 body {
     background-color: #111845;
-    padding-bottom: 20px;
 }
 
 .wrapper {
@@ -46,7 +45,8 @@ body {
     justify-content: center;
     align-items: center;
     width: 800px;
-    margin-top: 25px;
+    margin: 15px auto;
+    padding-left: 350px
 } 
 
 #start-button {
@@ -73,6 +73,7 @@ body {
     width: 200px;
     height: 70px;
 }
+
 
 #game-buttons > button {
     margin-left: 2.5px;
@@ -105,13 +106,15 @@ body {
 }
 
 #game-over {
-    background-color: white;
+    background-image: url('./img/4dg.gif');
     height: 500px;
     width: 800px;
 }
 
 #you-win {
-    background-color: yellow;
+    background-image: url('./img/4dg.gif');
+    background-position: contain;
+    background-repeat:no-repeat;
     height: 500px;
     width: 800px;
 }
@@ -123,4 +126,30 @@ body {
     color: #634B1B !important;
     box-shadow: 0 .2em #634B1B !important; 
     font-size: 20px;
+}
+
+#kms {
+    /* background-color:white; */
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+	display: inline-block;
+	margin:5px;
+    font-weight: bold;
+    padding: 10px 0 10px 10px ;
+    /* background-color: lightgray; */
+    /* text-shadow: -1px -1px black, 1px 1px white; */
+    color: black;
+    font-size: 15px;
+    /* -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px; */
+    /* box-shadow: 0 .2em gray; 
+    cursor: pointer; */
+    padding: 10px;
+    margin-right: 20px;
+    position: absolute;
+    top: 90px;
+    left: 280px;
+    width: 80px !important ;
 }
