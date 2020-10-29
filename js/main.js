@@ -96,7 +96,7 @@ function updateCanvas() {
     ctx.clearRect(0,0, canvas.width, canvas.height);
     currentGame.kms--;
     let kmCounter = document.getElementById('kms');
-kmCounter.innerHTML = `Home: ${currentGame.kms}`;
+kmCounter.innerHTML = `Home: ${currentGame.kms}kms`;
    currentGame.checkButtons();
     /* currentGame.checkAudioButtons(); */
     canvasBackground.move();
