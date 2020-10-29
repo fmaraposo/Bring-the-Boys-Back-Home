@@ -12,7 +12,7 @@ class Game {
         this.bonus = [];
         this.context= ctx;
         this.lives = '⭐⭐⭐⭐⭐';
-        this.kms = 3000;
+        this.kms = 100;
         this.gameIsRunning = false;
         this.gameMusic = true;
     }
