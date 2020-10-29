@@ -74,7 +74,7 @@ document.onkeyup = (e) => {
 let canvasBackground = new Background (canvas, ctx); 
 let  currentGame = new Game ();  //Instantiate a new game
 
-let kmCounter = document.getElementById('kms').innerHTML = `Home: ${currentGame.kms}`;
+
 
 function startGame () {
     currentGame.gameIsRunning = true;
@@ -95,8 +95,9 @@ function startGame () {
 function updateCanvas() {
     ctx.clearRect(0,0, canvas.width, canvas.height);
     currentGame.kms--;
-    let kmCounter = document.getElementById('kms').innerHTML = currentGame.kms;
-    currentGame.checkButtons();
+    let kmCounter = document.getElementById('kms');
+kmCounter.innerHTML = `Home: ${currentGame.kms}`;
+   currentGame.checkButtons();
     /* currentGame.checkAudioButtons(); */
     canvasBackground.move();
     canvasBackground.draw();

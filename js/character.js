@@ -2,8 +2,8 @@ class Character {
     constructor () {
         this.x = 50;
         this.y = 250;
-        this.width = 90;
-        this.height = 80;
+        this.width = 100;
+        this.height = 90;
         this.img = '../img/submarine.png';
         this.speedX = 0;
         this.speedY = 0;

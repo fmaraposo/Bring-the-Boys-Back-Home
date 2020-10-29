@@ -12,7 +12,7 @@ class Game {
         this.bonus = [];
         this.context= ctx;
         this.lives = '⭐⭐⭐⭐⭐';
-        this.kms = 100;
+        this.kms = 3000;
         this.gameIsRunning = false;
         this.gameMusic = true;
     }
@@ -31,7 +31,7 @@ class Game {
     //Frequency of the Obstacles
     obstacleFrequency() {
         obstacleFrequency ++;
-        if(obstacleFrequency % 60 === 1) {
+        if(obstacleFrequency % 70 === 1) {
             let randomObstacleX = 800;
             let randomObstacleY = Math.floor(Math.random()*420);
             let newObstacle = new Obstacle (randomObstacleX, randomObstacleY);
