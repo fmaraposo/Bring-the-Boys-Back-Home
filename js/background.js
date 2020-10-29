@@ -1,5 +1,5 @@
 const backgroundImg = new Image (); 
-backgroundImg.src = '../img/underwater tileable.png';
+backgroundImg.src = '../img/deep-sea-bg.jpg';
 
 class Background {
     constructor (canvas, canvasContext) {
@@ -17,8 +17,8 @@ class Background {
     }
     
     draw() {
-        this.canvasContext.drawImage(this.img, this.x, 0);
-        this.canvasContext.drawImage(this.img, this.x + canvas.width, 0);
+        this.canvasContext.drawImage(this.img, this.x, 0, canvas.width, canvas.height);
+        this.canvasContext.drawImage(this.img, this.x + canvas.width, 0, canvas.width, canvas.height);
     }
 
     resizeImage() {

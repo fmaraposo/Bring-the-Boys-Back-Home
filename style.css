@@ -1,3 +1,7 @@
+body {
+    background-color: #111845;
+    padding-bottom: 20px;
+}
 
 .wrapper {
     display: flex;
@@ -8,7 +12,9 @@
 }
 
 #game-intro {
-    background-color: black;
+    background-image: url('./img/deep-sea-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,51 +22,100 @@
     height: 500px;
     width: 800px;
     margin-top: 2.5%;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(201,201,201,0.91); 
+    box-shadow: 0px 0px 15px 3px rgba(201,201,201,0.91);
 }
 
 #game-intro > h1 {
     text-align: center;
     margin: auto;
-    font-size: 40px;
+    font-size: 25px;
     font-family: 'Press Start 2P', cursive;
     color: white;
     font-weight: bold;
 }
 
-#game-intro > button {
-    text-align: center;
-    margin-bottom: 15%;
-    font-family: 'Press Start 2P', cursive;
-    background-color: black;
-    color: white;
-}
-
 #canvas {
-    /* background-image: url('./img/background-canvas.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover; */
     margin-top: 2.5%;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(201,201,201,0.91); 
+    box-shadow: 0px 0px 15px 3px rgba(201,201,201,0.91);
 }
 
 #game-buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    /* border: 2px solid red; */
     width: 800px;
     margin-top: 25px;
 } 
 
+#start-button {
+    margin-left: 2.5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    text-align: center;
+	display: inline-block;
+	margin:5px;
+    font-weight: bold;
+    padding: 10px 0 10px 10px ;
+    text-shadow: -1px -1px black, 1px 1px white;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 100px;
+    background-color: #D9931C;
+    color: #634B1B;
+    box-shadow: 0 .2em #634B1B; 
+    width: 200px;
+    height: 70px;
+}
+
 #game-buttons > button {
     margin-left: 2.5px;
     font-family: 'Press Start 2P', cursive;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
+    text-align: center;
+	display: inline-block;
+	margin:5px;
+    font-weight: bold;
+    padding: 10px 0 10px 10px ;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
 } 
+
+#audio {
+    position: relative;
+    right: 150px;
+    background-color: #D9931C !important;
+    color: #634B1B !important;
+    box-shadow: 0 .2em #634B1B !important; 
+}
 
 #game-over {
     background-color: white;
     height: 500px;
     width: 800px;
 }
+
+#you-win {
+    background-color: yellow;
+    height: 500px;
+    width: 800px;
+}
+
+#audio {
+    font-size: 20px;
+}
+

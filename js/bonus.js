@@ -3,8 +3,8 @@ class Bonus {
         this.x = x;
         this.y = y;
         this.img = '/img/power-stars-f1.png';
-        this.width = 40;
-        this.height = 50;
+        this.width = 35;
+        this.height = 35;
     }
 
     drawBonus () {
