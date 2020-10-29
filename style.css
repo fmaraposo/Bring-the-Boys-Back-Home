@@ -112,7 +112,7 @@ body {
 }
 
 #you-win {
-    background-image: url('./img/4dg.gif');
+    background-color: white;
     background-position: contain;
     background-repeat:no-repeat;
     height: 500px;
