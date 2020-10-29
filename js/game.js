@@ -10,6 +10,7 @@ class Game {
         this.lives = '⭐⭐⭐⭐⭐';
         this.kms = 3000;
         this.gameIsRunning = false;
+        this.gameMusic = true;
     }
 
     paintScore() {
@@ -40,13 +41,33 @@ class Game {
         bonusFrequency ++;
         if(bonusFrequency % 1500 === 1) {
             let randomBonusX = 800;
-            let randomBonusY = Math.floor(Math.random()*250);
+            let randomBonusY = this.bonusPosition();
             let newBonus = new Bonus (randomBonusX, randomBonusY);
             newBonus.drawBonus();
             this.bonus.push(newBonus);
         }
     }
 
+    bonusPosition() {
+        //obter posicao random
+        let position = Math.floor(Math.random()*250);
+
+        //verificar se posicao random ja existe num obstaculo
+        let overriding = this.obstacles.some((obstacle) => {
+            return (obstacle.y === position);
+        });
+
+        //se posicao ja existir num obstaculo
+        if (overriding) {
+            //volta a chamar a mesma funcao
+            this.bonusPosition();
+        }
+       
+        //retorna ultima posicao gerada
+        return position;
+    }
+
+   
     //Collision with Obstacle
     detectCollision(enemy, index) {
         if(//Direita do Jogador colide a esquerda do obstáculo
@@ -104,12 +125,27 @@ class Game {
         }
     }
 
+    checkAudioButtons () {
+        if(this.gameMusic === true) {
+            musicGame.play();
+        } else {
+            musicGame.pause();
+        }
+    }
+
     youWin() {
         if(this.kms === 0){
             this.gameIsRunning = false;
             document.getElementById('game-board').style.display = 'none';
             document.getElementById('you-win').style.display = 'block';
         }
-    //YouLost -> this.gameIsRunning = false;
+    }
+
+    youLost() {
+        if(this.lives === "") {
+            this.gameIsRunning = false;
+            document.getElementById('game-board').style.display = 'none';
+            document.getElementById('game-over').style.display = 'block';
+        }
     }
 }

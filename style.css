@@ -101,6 +101,7 @@ body {
     background-color: #D9931C !important;
     color: #634B1B !important;
     box-shadow: 0 .2em #634B1B !important; 
+    font-size: 20px;
 }
 
 #game-over {
@@ -115,7 +116,11 @@ body {
     width: 800px;
 }
 
-#audio {
+#audio-pause {
+    position: relative;
+    right: 150px;
+    background-color: #D9931C !important;
+    color: #634B1B !important;
+    box-shadow: 0 .2em #634B1B !important; 
     font-size: 20px;
 }
-

@@ -32,6 +32,21 @@ document.getElementById('pause').onclick = () => {
     }
 };
 
+//Audio Button
+document.getElementById('audio').onclick = () => {
+    if(currentGame.musicGame === true) {
+        currentGame.musicGame = false;
+        currentGame.checkAudioButtons();
+        musicGame.pause();
+        console.log('pause-music');
+    } else {
+        currentGame.musicGame = true;
+        musicGame.play();
+        currentGame.checkAudioButtons();
+        console.log('play-music');
+    }
+};
+
 //Reset Button
 document.getElementById('restart').onclick = () => {
     document.getElementById('you-win').style.display = 'none';
@@ -77,6 +92,7 @@ function updateCanvas() {
     ctx.clearRect(0,0, canvas.width, canvas.height);
     currentGame.kms--;
     currentGame.checkButtons();
+    currentGame.checkAudioButtons();
     canvasBackground.move();
     canvasBackground.draw();
     currentGame.character.drawCharacter();
@@ -87,6 +103,7 @@ function updateCanvas() {
     currentGame.paintObstacles();
     currentGame.paintBonus();
     currentGame.youWin();
+    currentGame.youLost();
     currentGame.obstacles.forEach((obstacle, index) => {
         currentGame.detectCollision(obstacle, index);
     });
