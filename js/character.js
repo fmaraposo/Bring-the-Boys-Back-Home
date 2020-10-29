@@ -23,7 +23,7 @@ class Character {
     move(keyCode) {
         ctx.clearRect(this.x, this.y, this.width, this.height);
         switch(keyCode) {
-            case 39: // Move to the right
+            case 68: // Move to the right
             if(this.x < 650) {
                 this.speedX +=1;
             }else {
@@ -31,7 +31,7 @@ class Character {
                 this.speedX = 0;
             }
             break;
-            case 37: // Move to the left
+            case 65: // Move to the left
             if(this.x > 30) {
                 this.speedX -=1;
             }else {
@@ -39,7 +39,7 @@ class Character {
                 this.speedX = 0;
             }
             break;
-            case 38: // Move up
+            case 87: // Move up
             if(this.y > 0) {
                 this.speedY -=1; 
             }else {
@@ -47,7 +47,7 @@ class Character {
                 this.speedY = 0;
             }
             break;
-            case 40: // Move down
+            case 83: // Move down
             if(this.y< 400) {
                 this.speedY +=1;
             } else {
