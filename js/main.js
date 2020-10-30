@@ -5,6 +5,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 document.getElementById('game-board').style.display = 'none';
 document.getElementById('game-buttons').style.display = 'none';
+document.getElementById('instructions-div').style.display ='none';
 document.getElementById('game-over').style.display = 'none';
 document.getElementById('you-win').style.display = 'none';
 document.getElementById('kms').style.display ='none';
@@ -17,6 +18,15 @@ musicGame.src = '../music/smoky_180_proud_music_preview.mp3';
 document.getElementById('start-button').onclick = () => {
     startGame();
 };
+
+//Instructions
+document.getElementById("instructions").addEventListener ('click', function () {
+    document.getElementById('kms').style.display ='none';
+    cancelAnimationFrame(animationFrameId);
+    document.getElementById('game-board').style.display = 'none';
+    document.getElementById('pause').style.display = 'none';
+    document.getElementById('instructions-div').style.display ='block';
+});
 
 //Pause Button
 document.getElementById('pause').onclick = () => {
@@ -50,6 +60,8 @@ document.getElementById('audio').onclick = () => {
 //Reset Button
 document.getElementById('restart').onclick = () => {
     document.getElementById('you-win').style.display = 'none';
+    document.getElementById("instructions-div").style.display = 'none';
+    document.getElementById('pause').style.display = 'inline-block';
     currentGame.character = {};
     currentGame.obstacles = [];
     currentGame.bonus = [];

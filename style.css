@@ -46,7 +46,7 @@ body {
     align-items: center;
     width: 800px;
     margin: 15px auto;
-    padding-left: 350px
+    padding-left: 150px
 } 
 
 #start-button {
@@ -98,7 +98,7 @@ body {
 
 #audio {
     position: relative;
-    right: 150px;
+    right: 70px;
     background-color: #D9931C !important;
     color: #634B1B !important;
     box-shadow: 0 .2em #634B1B !important; 
@@ -175,6 +175,83 @@ body {
     color: #634B1B !important;
     box-shadow: 0 .2em #634B1B !important; 
     font-size: 20px;
+}
+
+#instructions-div {
+    background-image: url('./img/deep-sea-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 800px;
+    margin-top: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1x solid white;
+    background-color: #C19735;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(201,201,201,0.91); 
+    box-shadow: 0px 0px 15px 3px rgba(201,201,201,0.91);
+}
+
+.btn-instruction {
+    margin-left: 2.5px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+	display: inline-block;
+	margin:5px;
+    font-weight: bold;
+    padding: 10px 0 10px 10px ;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+#w-key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#asd-keys {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#instructions-div > h1 {
+    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    display:block;
+    padding-bottom:10px;
+}
+
+#text-instructions {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    width: 700px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    line-height: 25px;
 }
 
 #kms {
